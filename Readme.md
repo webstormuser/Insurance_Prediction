@@ -1,6 +1,6 @@
 # Insurance_Prediction
 
- * INSURANCE PREDICTION : 
+  
    The project is about to predict the Insurance amount for a person 
    
   Step 1: 
