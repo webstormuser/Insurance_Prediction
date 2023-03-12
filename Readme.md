@@ -12,3 +12,8 @@
    Step 3: 
       Create a github repository and clone it in VScode IDE 
       (https://github.com/webstormuser/Insurance_Prediction)
+
+  
+
+     
+     
