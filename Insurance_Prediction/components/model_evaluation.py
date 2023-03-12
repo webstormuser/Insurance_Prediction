@@ -76,9 +76,9 @@ class ModelEvaluation:
                 logging.info(f"Current trained model is not better than previous model")
                 raise Exception("Current trained model is not better than previous model")
 
-            model_eval_artifact = artifact_entity.ModelEvaluationArtifact(is_model_accepted=True,
+            model_eval_artifact = artifact_entity.ModelEvaluationArtifact(is_model_accpeted=True,
             improved_accuracy=current_model_score-previous_model_score)
             logging.info(f"Model eval artifact: {model_eval_artifact}")
             return model_eval_artifact
         except Exception as e:
-            raise SensorException(e,sys)
+            raise InsuranceException(e,sys)

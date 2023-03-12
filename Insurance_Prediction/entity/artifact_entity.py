@@ -24,6 +24,12 @@ class ModelTrainerArtifact:
 
 @dataclass
 class ModelEvaluationArtifact:
-    is_model_accepted:bool
-    improved_accuracy:float
+    is_model_accpeted:bool
+    improved_r2_score:float
 
+@dataclass
+class ModelPusherArtifact:
+    pusher_model_dir:str 
+    saved_model_dir:str
+
+    
