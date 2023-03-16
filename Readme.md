@@ -13,6 +13,7 @@
       Create a github repository and clone it in VScode IDE 
       (https://github.com/webstormuser/Insurance_Prediction)
 
+
    Step 4: 
        Install the necessary dependencies for project
        python command on terminal (pip install -r requirements.txt )
