@@ -49,13 +49,18 @@
       text-align:center;
       font-size:34px;   
       }
+      h2{
+      color:black;
+      text-align:center;
+      font-size:28px
+      }
 	</style>
 </head>
 <body >
   <h1>Medical Insurance Amount Prediction </h1>
-	<form>
+	<form action="{{url_for('predict_data')}}" method="POST">
 		<label for="name"> AGE :</label>   
-		<input type="number" id="name" name="name"required>
+		<input type="number" id="name" name="name" min=1 max=100 required >
 		
 
 		
@@ -65,7 +70,7 @@
           		<option value="male">MALE</option>
           	</select>
  		 <label for="bmi">BMI :</label>
-      		<input type="number" id='bmi' name='bmi' required>
+      		<input type="number" id='bmi' name='bmi' step="0.01" required>
 
 		<label for="childer">NO Of CHILDREN:</label>
 			<select id="children" name="children" required>
@@ -92,8 +97,12 @@
 				<option value="southwest">SouthWest</option>
   			</select>
    		<label for="expenses">EXPENSES:</label>
-      		<input type="number" id='expenses' name='expenses' required>
+      		<input type="number" id='expenses' name='expenses' step="0.01" required>
 			<input type="submit" value="Submit">
+		<h2>
+			The Predicted Medical Insurance Amount is 
+          Rs.{{results}}
+		</h2>
 </form>
 </body>
 </html>
