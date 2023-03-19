@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from Insurance_Prediction.pipeline.training_pipeline import start_training_pipeline
-from Insurance_Prediction.pipeline.batch_prediction import CustomData,PredictPipeline
+from Insurance_Prediction.pipeline.batch_prediction import CustomData,start_batch_prediction
 
 
 application = Flask(__name__)
@@ -15,7 +15,6 @@ app=application
 def home():
     return render_template('home.html')
 
-'''
 @app.route('/prediction',methods=['GET','POST'])
 def predict_data():
     if request.method=='GET':
@@ -33,10 +32,8 @@ def predict_data():
         )
         pred_df=data.get_data_as_data_frame()
         print(pred_df)
-        predict_pipeline=PredictPipeline()
-        result=predict_pipeline.predict(pred_df)
+        result=start_batch_prediction(pred_df)
         render_template('home.html',result=result[0])
-        
-'''
+
 if __name__ == '__main__':  
     app.run(debug=True,port=5001,host='0.0.0.0')

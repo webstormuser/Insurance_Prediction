@@ -9,9 +9,8 @@ PREDICTION_DIR="prediction"
 import numpy as np
 from Insurance_Prediction.pipeline.training_pipeline import start_training_pipeline
 
-class PredictPipeline:
-    def __init__(self):pass
-    def start_batch_prediction(input_file_path):
+
+def start_batch_prediction(input_file_path):
             try:
                 #start_training_pipeline()
                 os.makedirs(PREDICTION_DIR,exist_ok=True)
