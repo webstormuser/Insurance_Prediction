@@ -6,6 +6,9 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from Insurance_Prediction.pipeline.training_pipeline import start_training_pipeline
 from Insurance_Prediction.pipeline.batch_prediction import CustomData,start_batch_prediction
+from dotenv import load_dotenv
+load_dotenv()
+MONGO_DB_URL=os.getenv("MONGO_DB_URL")
 
 
 application = Flask(__name__)
@@ -36,4 +39,4 @@ def predict_data():
         render_template('home.html',result=result[0])
 
 if __name__ == '__main__':  
-    app.run(debug=True,port=5001,host='0.0.0.0')
+    application.run(debug=True,port=5001,host='0.0.0.0')
