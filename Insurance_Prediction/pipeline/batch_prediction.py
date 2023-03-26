@@ -10,9 +10,9 @@ import numpy as np
 from Insurance_Prediction.pipeline.training_pipeline import start_training_pipeline
 
 def start_batch_prediction(input_file_path):
-    '''
-        This function is used for creating prediction for complete dataset/file provided by user and creating prediction file
-    '''
+            '''
+            This function is used for creating prediction for complete dataset/file provided by user and creating prediction file
+            '''
             try:
                 #start_training_pipeline()
                 os.makedirs(PREDICTION_DIR,exist_ok=True)
