@@ -43,7 +43,7 @@
             
             
    * OutPut Images :
-        ![Image1][https://github.com/webstormuser/Insurance_Prediction/blob/main/Capture.PNG]
-        ![Image2][https://github.com/webstormuser/Insurance_Prediction/blob/main/Capture1.PNG]
+        ![Image1](https://github.com/webstormuser/Insurance_Prediction/blob/main/Capture.PNG)
+        ![Image2](https://github.com/webstormuser/Insurance_Prediction/blob/main/Capture1.PNG)
      
      
