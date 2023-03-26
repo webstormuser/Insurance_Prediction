@@ -27,5 +27,17 @@
        
    Step 6:
      python main.py (will create the final predction output file of dataset)
+
+
+   Step 7:
+     Create the Flask Application (application.py file)
+
+
+   How to Run a project :
+      To get complete prediction of user input file run 
+         python main.py file 
+
+      To get the prediction for inputs provided by user from user input form 
+         python application.py file 
      
      

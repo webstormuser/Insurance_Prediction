@@ -10,6 +10,9 @@ import numpy as np
 from Insurance_Prediction.pipeline.training_pipeline import start_training_pipeline
 
 def start_batch_prediction(input_file_path):
+    '''
+        This function is used for creating prediction for complete dataset/file provided by user and creating prediction file
+    '''
             try:
                 #start_training_pipeline()
                 os.makedirs(PREDICTION_DIR,exist_ok=True)
@@ -38,6 +41,9 @@ def start_batch_prediction(input_file_path):
 
 
 class PredictPipeline:
+    '''
+     This class predict the Insurance amount for a person as per input provided by customer
+    '''
     def __init__(self):pass
 
     def predict(self,features):

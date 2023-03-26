@@ -38,11 +38,11 @@ def predict_data():
         print(pred_df)
         predict_pipeline=PredictPipeline()
         result=predict_pipeline.predict(pred_df)
-        render_template('home.html',result=result[0])
+        return render_template('home.html',result=result[0])
 
 if __name__ == '__main__': 
     try:
-        app.run(debug=True,port=5001)
+        app.run(debug=True,port=5002,host='0.0.0.0')
         print(app.debug)
     except Exception as e:
         raise InsuranceException(e,sys)
