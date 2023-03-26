@@ -1,12 +1,13 @@
 from flask import Flask ,request,render_template
 from flask_cors import CORS,cross_origin
+from Insurance_Prediction.exception import InsuranceException
+import os,sys
 import os
 import pandas as pd 
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-from Insurance_Prediction.pipeline.training_pipeline import start_training_pipeline
-from Insurance_Prediction.pipeline.batch_prediction import CustomData,start_batch_prediction
-from Insurance_Prediction.config import mongo_client
+#from Insurance_Prediction.pipeline.training_pipeline import start_training_pipeline
+from Insurance_Prediction.pipeline.batch_prediction import CustomData,start_batch_prediction,PredictPipeline
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -35,8 +36,13 @@ def predict_data():
         )
         pred_df=data.get_data_as_data_frame()
         print(pred_df)
-        result=start_batch_prediction(pred_df)
+        predict_pipeline=PredictPipeline()
+        result=predict_pipeline.predict(pred_df)
         render_template('home.html',result=result[0])
 
 if __name__ == '__main__': 
-    app.run(debug=True,port=5001)
+    try:
+        app.run(debug=True,port=5001)
+        print(app.debug)
+    except Exception as e:
+        raise InsuranceException(e,sys)

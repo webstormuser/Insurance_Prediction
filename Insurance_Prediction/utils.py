@@ -2,6 +2,7 @@ import pandas as pd
 from Insurance_Prediction.logger import logging
 from Insurance_Prediction.exception import InsuranceException
 from Insurance_Prediction.config import mongo_client
+
 import os,sys
 import yaml
 import numpy as np

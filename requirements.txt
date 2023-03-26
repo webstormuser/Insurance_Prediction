@@ -17,7 +17,7 @@ PyYAML
 numpy
 scikit-learn
 apache-airflow
-flask 
+Flask 
 flask_cors
 streamlit
 -e .

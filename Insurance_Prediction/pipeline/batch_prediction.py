@@ -9,7 +9,6 @@ PREDICTION_DIR="prediction"
 import numpy as np
 from Insurance_Prediction.pipeline.training_pipeline import start_training_pipeline
 
-
 def start_batch_prediction(input_file_path):
             try:
                 #start_training_pipeline()
@@ -38,17 +37,27 @@ def start_batch_prediction(input_file_path):
                 raise InsuranceException(e, sys)
 
 
+class PredictPipeline:
+    def __init__(self):pass
+
+    def predict(self,features):
+        try:
+            model_resolver = ModelResolver(model_registry="saved_models")
+            transformer = load_object(file_path=model_resolver.get_latest_transformer_path())
+            model = load_object(file_path=model_resolver.get_latest_model_path())
+            data_scaled=transformer.transform(features)
+            prediction = model.predict(data_scaled)
+            return prediction
+
+            
+        except Exception as e :
+            raise InsuranceException(e,sys)
+
 class CustomData:
-    def __init__(self,
-    age:int,
-    sex:str,
-    bmi:float,
-    children:int,
-    smoker:str,
-    region:str,
+    def __init__(self, age:int,sex:str,bmi:float,children:int,smoker:str,region:str,
     expenses:float):
         self.age=age
-        self.sex=gender
+        self.sex=sex
         self.bmi=bmi
         self.children=children
         self.smoker=smoker
@@ -59,9 +68,9 @@ class CustomData:
         try:
             custom_data_as_input_dict={
                 "age":[self.age],
-                "gender":[self.sex],
+                "sex":[self.sex],
                 "bmi":[self.bmi],
-                "no_of_children":[self.children],
+                "children":[self.children],
                 "smoker":[self.smoker],
                 "region":[self.region],
                 "expenses":[self.expenses]
