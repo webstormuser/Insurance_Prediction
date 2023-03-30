@@ -42,6 +42,7 @@ def predict_data():
 
 if __name__ == '__main__': 
     try:
-        app.run(host='0.0.0.0')
+        app.run(debug=True,port=5002,host='0.0.0.0')
+        print(app.debug)
     except Exception as e:
         raise InsuranceException(e,sys)
