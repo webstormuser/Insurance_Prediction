@@ -19,5 +19,5 @@ scikit-learn
 apache-airflow
 Flask 
 flask_cors
-streamlit
+
 -e .
