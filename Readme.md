@@ -41,6 +41,14 @@
          * To get the prediction for inputs provided by user from user input form 
             python application.py file 
             
+   * Step 8 : 
+      Deployment of Project at AWS cloud :
+        * you must required AWS account 
+        * Create the ElasticBeanStack instance in AWS 
+        * Create  continuous delivery pipeline to deploy code 
+        How to run a project file from Deployed environment :
+          Click on url of instance created 
+            
             
    * OutPut Images :
 
